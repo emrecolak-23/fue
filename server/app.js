@@ -22,6 +22,8 @@ app.use(passport.session());
 
 require('./routes/authRoutes')(app);
 
-app.listen(5000, () => {
-  console.log('Server worked on', 5000);
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log('Server worked on', PORT);
 });
