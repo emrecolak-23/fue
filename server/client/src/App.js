@@ -23,6 +23,9 @@ function App() {
     return state.auth;
   });
 
+  console.log(isLoadingUser);
+  console.log(loadingUserError);
+
   useState(() => {
     doFetchUser();
   }, [doFetchUser]);
