@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 import { fetchUser } from '../thunks/fetchUser';
+import { handleToken } from '../thunks/handleToken';
 
 const authSlice = createSlice({
   name: 'auth',
@@ -19,6 +20,18 @@ const authSlice = createSlice({
     });
     builder.addCase(fetchUser.rejected, (state, action) => {
       state.isLoading = false;
+      state.error = action.error;
+    });
+
+    builder.addCase(handleToken.pending, (state, action) => {
+      state.isLoading = true;
+    });
+
+    builder.addCase(handleToken.fulfilled, (state, action) => {
+      state.data = action.payload;
+    });
+
+    builder.addCase(handleToken.rejected, (state, action) => {
       state.error = action.error;
     });
   },
