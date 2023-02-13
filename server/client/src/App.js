@@ -7,14 +7,8 @@ import { useThunk } from './hooks/use-thunk';
 
 import Header from './components/Header';
 import Landing from './components/Landing';
-
-function Dashboard() {
-  return <h2>Dashboard</h2>;
-}
-
-function SurveyNew() {
-  return <h2>Survey New</h2>;
-}
+import Dashboard from './components/Dashboard';
+import SurveyNew from './components/surveys/SurveyNew';
 
 function App() {
   const [doFetchUser, isLoadingUser, loadingUserError] = useThunk(fetchUser);
