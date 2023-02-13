@@ -10,6 +10,7 @@ class SurveyForm extends Component {
           onSubmit={this.props.handleSubmit((values) => console.log(values))}
         >
           <Field name="surveyTitle" type="text" component="input" />
+          <h1>Emre</h1>
           <button type="submit">Submit</button>
         </form>
       </div>
