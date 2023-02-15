@@ -25,16 +25,14 @@ function App() {
   }, [doFetchUser]);
 
   return (
-    <div className="container">
-      <BrowserRouter>
-        <div>
-          <Header auth={data} />
-          <Route exact path="/" component={Landing} />
-          <Route exact path="/surveys" component={Dashboard} />
-          <Route path="/surveys/new" component={SurveyNew} />
-        </div>
-      </BrowserRouter>
-    </div>
+    <BrowserRouter>
+      <div className="container">
+        <Header auth={data} />
+        <Route exact path="/" component={Landing} />
+        <Route exact path="/surveys" component={Dashboard} />
+        <Route path="/surveys/new" component={SurveyNew} />
+      </div>
+    </BrowserRouter>
   );
 }
 
