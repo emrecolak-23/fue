@@ -4,10 +4,7 @@ import { useThunk } from '../hooks/use-thunk';
 import { handleToken } from '../store/thunks/handleToken';
 
 function Payments() {
-  const [doToken, isLoadingToken, isErrorToken] = useThunk(handleToken);
-
-  console.log(isLoadingToken);
-  console.log(isErrorToken);
+  const [doToken, ,] = useThunk(handleToken);
 
   return (
     <StripeCheckout

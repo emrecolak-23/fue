@@ -12,3 +12,4 @@ export const store = configureStore({
 });
 
 export * from './thunks/fetchUser';
+export * from './thunks/sendSurvey';

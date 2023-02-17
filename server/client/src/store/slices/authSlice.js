@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 import { fetchUser } from '../thunks/fetchUser';
 import { handleToken } from '../thunks/handleToken';
+import { sendSurvey } from '../thunks/sendSurvey';
 
 const authSlice = createSlice({
   name: 'auth',
@@ -32,6 +33,18 @@ const authSlice = createSlice({
     });
 
     builder.addCase(handleToken.rejected, (state, action) => {
+      state.error = action.error;
+    });
+
+    builder.addCase(sendSurvey.pending, (state, action) => {
+      state.isLoading = true;
+    });
+
+    builder.addCase(sendSurvey.fulfilled, (state, action) => {
+      state.isLoading = false;
+      state.data.credits = action.payload.credits;
+    });
+    builder.addCase(sendSurvey.rejected, (state, action) => {
       state.error = action.error;
     });
   },

@@ -11,14 +11,11 @@ import Dashboard from './components/Dashboard';
 import SurveyNew from './components/surveys/SurveyNew';
 
 function App() {
-  const [doFetchUser, isLoadingUser, loadingUserError] = useThunk(fetchUser);
+  const [doFetchUser, ,] = useThunk(fetchUser);
 
   const { data } = useSelector((state) => {
     return state.auth;
   });
-
-  console.log(isLoadingUser);
-  console.log(loadingUserError);
 
   useState(() => {
     doFetchUser();

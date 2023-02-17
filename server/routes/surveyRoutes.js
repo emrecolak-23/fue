@@ -40,4 +40,9 @@ module.exports = (app) => {
       res.status(422).json(error);
     }
   });
+
+  app.post('/api/surveys/webhooks', (req, res) => {
+    console.log(req.body);
+    res.send({});
+  });
 };
